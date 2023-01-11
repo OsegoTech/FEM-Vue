@@ -6,5 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div id="app">
+      <p v-if="characterList.length === 0">There are no characters</p>
+      <ul v-else>
+        <li v-for="character in characterList"> {{character.name}} </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      
+      Vue.createApp({
+        data:() => {
+          characterList: [
+            {name: 'Aaang'},
+            {name: 'Zuko'},
+            {name: 'Toph'},
+            {name: 'Katara'}
+          ]
+        }
+      }).mount('#app')
+    </script>
+  </body>
 </html>
